@@ -13,13 +13,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
 
 if (process.env.NODE_ENV === 'production') {
-    console.log("production");
     app.use(express.static(path.join(__dirname, 'client/build')));
-    app.get('*', function(req, res) {
+    app.get('/', function(req, res) {
         res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
     });
-} else {
-    console.log("development");
 }
 
 app.listen(port, error => {
