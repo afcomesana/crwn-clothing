@@ -3,8 +3,8 @@ const bodyParser = require('body-parser');
 const path = require('path');
 
 if (process.env.NODE_ENV !== 'production') require('dotenv').config();
-const STRIPE_SECRET_KEY = 'sk_test_51IShYNLXyXWwDkxpumeFalWaH0OEuhtj6A2sHW3WvQNhpiprzEpoXPybV41laQq3jXRwzKg0NHBpVwoLhfiGpank00shsL64bc';
-const stripe = require('stripe')(STRIPE_SECRET_KEY);
+
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 const app = express();
 const port = process.env.PORT || 5000;
