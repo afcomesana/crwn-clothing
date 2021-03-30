@@ -21,6 +21,7 @@ if (process.env.NODE_ENV === 'production') {
 
 app.listen(port, error => {
     if (error) throw error;
+    console.log(process.env.NODE_ENV);
     console.log('Server running on port ' + port);
 });
 
